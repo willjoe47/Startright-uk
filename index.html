@@ -1,30 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartRight UK - Launch Your Business</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; }
-        .hero { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 60px 20px; text-align: center; min-height: 100vh; }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        .highlight { color: #fbbf24; }
-        .tagline { font-size: 1.3rem; opacity: 0.9; margin-bottom: 40px; }
-        .box { background: white; color: #1f2937; border-radius: 20px; padding: 40px; max-width: 600px; margin: 0 auto; }
-        .box h2 { margin-bottom: 15px; color: #667eea; }
-        .btn { display: inline-block; background: #667eea; color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-size: 1.1rem; margin-top: 20px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StartRight UK - Launch Your Business in Minutes</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; color: #1f2937; }
+
+/* Hero Section */
+.hero {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+padding: 60px 20px;
+text-align: center;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero .highlight { color: #fbbf24; }
+.hero p { font-size: 1.3rem; opacity: 0.95; margin-bottom: 30px; }
+.hero-image { width: 100%; max-width: 700px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin-top: 20px; }
+
+/* Features Section */
+.features { padding: 60px 20px; background: #f9fafb; }
+.features h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.feature-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.feature-card img { width: 100%; height: 180px; object-fit: cover; }
+.feature-card-content { padding: 25px; }
+.feature-card h3 { color: #667eea; margin-bottom: 10px; }
+.feature-card p { color: #6b7280; line-height: 1.6; }
+
+/* Pricing Section */
+.pricing { padding: 60px 20px; }
+.pricing h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 750px; margin: 0 auto; }
+.price-card { background: white; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e5e7eb; }
+.price-card.featured { border-color: #667eea; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transform: scale(1.05); }
+.price-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.price-card.featured h3 { color: white; }
+.price-card .price { font-size: 3.5rem; font-weight: bold; margin: 20px 0; }
+.price-card ul { list-style: none; margin: 25px 0; text-align: left; }
+.price-card li { padding: 10px 0; padding-left: 30px; position: relative; }
+.price-card li:before { content: "✓"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
+.price-card.featured li:before { color: #fbbf24; }
+.btn { display: inline-block; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-size: 1.1rem; font-weight: 600; cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+.btn-primary { background: #667eea; color: white; }
+.btn-white { background: white; color: #667eea; }
+
+/* How It Works */
+.how-it-works { padding: 60px 20px; background: #f9fafb; }
+.how-it-works h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 900px; margin: 0 auto; }
+.step { text-align: center; flex: 1; min-width: 200px; }
+.step-number { width: 50px; height: 50px; background: #667eea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px; }
+.step h3 { margin-bottom: 10px; }
+.step p { color: #6b7280; }
+
+/* Footer */
+.footer { background: #1f2937; color: white; padding: 40px 20px; text-align: center; }
+.footer h2 { margin-bottom: 10px; }
+.footer .highlight { color: #fbbf24; }
+.footer p { opacity: 0.7; margin: 5px 0; }
+.footer a { color: #fbbf24; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 600px) {
+.hero h1 { font-size: 2rem; }
+.price-card.featured { transform: scale(1); }
+}
+</style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Start<span class="highlight">Right</span></h1>
-        <p class="tagline">Launch Your UK Business in Minutes</p>
-        <div class="box">
-            <h2>Coming Soon!</h2>
-            <p>We're launching shortly. Get ready to start your UK business the right way.</p>
-            <a href="mailto:admin@wjsstyle.com" class="btn">Contact Us</a>
-        </div>
-    </div>
+<!-- Hero Section -->
+<section class="hero">
+<h1>Start<span class="highlight">Right</span></h1>
+<p>Launch Your UK Business in Minutes</p>
+<p style="font-size: 1.1rem; opacity: 0.9;">Register your company, set up taxes, and get trading - all in one place</p>
+<img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Business professionals in meeting" class="hero-image">
+</section>
+
+<!-- Features Section -->
+<section class="features">
+<h2>Everything You Need to Start</h2>
+<div class="features-grid">
+<div class="feature-card">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Business Planning">
+<div class="feature-card-content">
+<h3>Company Registration</h3>
+<p>Register your Ltd company with Companies House quickly and correctly. We guide you through every step.</p>
+</div>
+</div>
+<div class="feature-card">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="Tradesmen at work">
+<div class="feature-card-content">
+<h3>Perfect for Tradesmen</h3>
+<p>Builders, plumbers, electricians - get your business set up properly with the right structure and insurance guidance.</p>
+</div>
+</div>
+<div class="feature-card">
+<img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80" alt="Business woman">
+<div class="feature-card-content">
+<h3>Expert Guidance</h3>
+<p>Step-by-step help from business formation experts. No confusing jargon, just clear instructions.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+<h2>How It Works</h2>
+<div class="steps">
+<div class="step">
+<div class="step-number">1</div>
+<h3>Answer Questions</h3>
+<p>Tell us about your business in simple terms</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h3>We Prepare Everything</h3>
+<p>All forms and documents ready for submission</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h3>Launch Your Business</h3>
+<p>Get registered and start trading</p>
+</div>
+</div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing">
+<h2>Simple, Transparent Pricing</h2>
+<div class="pricing-grid">
+<div class="price-card">
+<h3>Premium</h3>
+<div class="price">£29</div>
+<ul>
+<li>Company registration guidance</li>
+<li>All forms pre-filled for you</li>
+<li>Email support</li>
+<li>Business document templates</li>
+</ul>
+<a href="https://buy.stripe.com/premium" class="btn btn-primary">Get Started</a>
+</div>
+<div class="price-card featured">
+<h3>Pro</h3>
+<div class="price">£99</div>
+<ul>
+<li>Everything in Premium</li>
+<li>Phone support</li>
+<li>1-on-1 consultation call</li>
+<li>Priority processing</li>
+<li>Tax registration help</li>
+</ul>
+<a href="https://buy.stripe.com/pro" class="btn btn-white">Get Pro</a>
+</div>
+</div>
+<p style="text-align: center; margin-top: 30px; color: #6b7280;">Also accept PayPal - <a href="mailto:admin@wjsstyle.com" style="color: #667eea;">Contact us</a></p>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<h2>Start<span class="highlight">Right</span></h2>
+<p>Launch Your UK Business the Right Way</p>
+<p style="margin-top: 20px;">© 2024 StartRight UK. All rights reserved.</p>
+<p><a href="mailto:admin@wjsstyle.com">admin@wjsstyle.com</a></p>
+</footer>
 </body>
 </html>
