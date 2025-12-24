@@ -3,107 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StartRight UK - Launch Your Business in Minutes</title>
+<title>StartRight UK - We Handle Everything So You Can Focus on Your Business</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; color: #1f2937; }
+body { font-family: 'Segoe UI', Arial, sans-serif; color: #1f2937; line-height: 1.6; }
+
+/* Header */
+.header { background: white; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 100; }
+.header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; color: #1f2937; }
+.logo span { color: #667eea; }
+.header-cta { background: #667eea; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; }
 
 /* Hero Section */
-.hero {
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-color: white;
-padding: 60px 20px;
-text-align: center;
-}
-.hero h1 { font-size: 3rem; margin-bottom: 10px; }
-.hero .highlight { color: #fbbf24; }
-.hero p { font-size: 1.3rem; opacity: 0.95; margin-bottom: 30px; }
-.hero-image { width: 100%; max-width: 700px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin-top: 20px; }
+.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 120px 20px 80px; text-align: center; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero .subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 15px; }
+.hero .subtext { font-size: 1.1rem; opacity: 0.85; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.trust-line { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; font-size: 0.95rem; opacity: 0.9; }
+.trust-line span { display: flex; align-items: center; gap: 8px; }
+.hero-btn { display: inline-block; background: #fbbf24; color: #1f2937; padding: 18px 40px; border-radius: 10px; text-decoration: none; font-size: 1.2rem; font-weight: 700; margin-top: 20px; transition: transform 0.2s; }
+.hero-btn:hover { transform: scale(1.05); }
 
-/* Features Section */
-.features { padding: 60px 20px; background: #f9fafb; }
-.features h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
-.feature-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.feature-card img { width: 100%; height: 180px; object-fit: cover; }
-.feature-card-content { padding: 25px; }
-.feature-card h3 { color: #667eea; margin-bottom: 10px; }
-.feature-card p { color: #6b7280; line-height: 1.6; }
+/* Trust Bar */
+.trust-bar { background: #f0fdf4; padding: 20px; text-align: center; border-bottom: 2px solid #bbf7d0; }
+.trust-bar p { color: #166534; font-weight: 600; font-size: 1.1rem; }
 
-/* Pricing Section */
-.pricing { padding: 60px 20px; }
-.pricing h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 750px; margin: 0 auto; }
-.price-card { background: white; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e5e7eb; }
-.price-card.featured { border-color: #667eea; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transform: scale(1.05); }
-.price-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-.price-card.featured h3 { color: white; }
-.price-card .price { font-size: 3.5rem; font-weight: bold; margin: 20px 0; }
-.price-card ul { list-style: none; margin: 25px 0; text-align: left; }
-.price-card li { padding: 10px 0; padding-left: 30px; position: relative; }
-.price-card li:before { content: "✓"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
-.price-card.featured li:before { color: #fbbf24; }
-.btn { display: inline-block; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-size: 1.1rem; font-weight: 600; cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s; }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
-.btn-primary { background: #667eea; color: white; }
-.btn-white { background: white; color: #667eea; }
+/* Problem Section */
+.problem { padding: 60px 20px; background: #fef3c7; }
+.problem h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; color: #92400e; }
+.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+.problem-item { background: white; padding: 25px; border-radius: 10px; border-left: 4px solid #f59e0b; }
+.problem-item h3 { color: #92400e; margin-bottom: 10px; }
+.problem-item p { color: #78716c; }
+
+/* Solution Section */
+.solution { padding: 60px 20px; background: white; }
+.solution h2 { text-align: center; margin-bottom: 15px; font-size: 2rem; color: #667eea; }
+.solution .intro { text-align: center; max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; color: #6b7280; }
+.solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.solution-card { background: #f9fafb; border-radius: 15px; padding: 30px; text-align: center; border: 2px solid #e5e7eb; }
+.solution-card .icon { font-size: 3rem; margin-bottom: 15px; }
+.solution-card h3 { color: #667eea; margin-bottom: 10px; }
+.solution-card p { color: #6b7280; }
+
+/* What We Handle Section */
+.services { padding: 60px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+.services h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
+.service-item { background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; text-align: center; }
+.service-item .check { font-size: 2rem; margin-bottom: 10px; }
+.service-item h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.service-item p { opacity: 0.85; font-size: 0.95rem; }
 
 /* How It Works */
 .how-it-works { padding: 60px 20px; background: #f9fafb; }
 .how-it-works h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-.steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 900px; margin: 0 auto; }
-.step { text-align: center; flex: 1; min-width: 200px; }
-.step-number { width: 50px; height: 50px; background: #667eea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px; }
-.step h3 { margin-bottom: 10px; }
+.steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1000px; margin: 0 auto; }
+.step { text-align: center; flex: 1; min-width: 220px; max-width: 280px; }
+.step-number { width: 60px; height: 60px; background: #667eea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 20px; }
+.step h3 { margin-bottom: 10px; color: #1f2937; }
 .step p { color: #6b7280; }
 
+/* Testimonials */
+.testimonials { padding: 60px 20px; background: white; }
+.testimonials h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.testimonial { background: #f9fafb; padding: 30px; border-radius: 15px; border-left: 4px solid #667eea; }
+.testimonial p { font-style: italic; margin-bottom: 15px; color: #374151; }
+.testimonial .author { font-weight: 600; color: #667eea; }
+.testimonial .role { color: #6b7280; font-size: 0.9rem; }
+
+/* Pricing Section */
+.pricing { padding: 60px 20px; background: #f9fafb; }
+.pricing h2 { text-align: center; margin-bottom: 15px; font-size: 2rem; }
+.pricing .guarantee { text-align: center; margin-bottom: 40px; color: #059669; font-weight: 600; font-size: 1.1rem; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
+.price-card { background: white; border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 2px solid #e5e7eb; position: relative; }
+.price-card.featured { border-color: #667eea; transform: scale(1.02); }
+.price-card.featured::before { content: "MOST POPULAR"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #667eea; color: white; padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.price-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: #1f2937; }
+.price-card .price { font-size: 3.5rem; font-weight: bold; color: #667eea; margin: 20px 0; }
+.price-card .price span { font-size: 1rem; color: #6b7280; }
+.price-card ul { list-style: none; margin: 25px 0; text-align: left; }
+.price-card li { padding: 12px 0; padding-left: 35px; position: relative; border-bottom: 1px solid #f3f4f6; }
+.price-card li:last-child { border-bottom: none; }
+.price-card li::before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: bold; font-size: 1.2rem; }
+.btn { display: inline-block; padding: 18px 40px; border-radius: 10px; text-decoration: none; font-size: 1.1rem; font-weight: 600; cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s; width: 100%; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+.btn-primary { background: #667eea; color: white; }
+.btn-featured { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+
+/* FAQ Section */
+.faq { padding: 60px 20px; background: white; }
+.faq h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.faq-grid { max-width: 800px; margin: 0 auto; }
+.faq-item { background: #f9fafb; padding: 25px; border-radius: 10px; margin-bottom: 15px; }
+.faq-item h3 { color: #667eea; margin-bottom: 10px; }
+.faq-item p { color: #6b7280; }
+
+/* CTA Section */
+.cta { padding: 60px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+.cta h2 { font-size: 2rem; margin-bottom: 15px; }
+.cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+.cta-btn { display: inline-block; background: #fbbf24; color: #1f2937; padding: 18px 50px; border-radius: 10px; text-decoration: none; font-size: 1.2rem; font-weight: 700; }
+
 /* Footer */
-.footer { background: #1f2937; color: white; padding: 40px 20px; text-align: center; }
-.footer h2 { margin-bottom: 10px; }
-.footer .highlight { color: #fbbf24; }
-.footer p { opacity: 0.7; margin: 5px 0; }
-.footer a { color: #fbbf24; text-decoration: none; }
+.footer { background: #1f2937; color: white; padding: 40px 20px; }
+.footer-content { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+.footer h3 { margin-bottom: 15px; color: #fbbf24; }
+.footer p, .footer a { color: #9ca3af; text-decoration: none; display: block; margin-bottom: 8px; }
+.footer a:hover { color: white; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #374151; color: #6b7280; }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 .hero h1 { font-size: 2rem; }
+.header-cta { display: none; }
 .price-card.featured { transform: scale(1); }
+.trust-line { flex-direction: column; gap: 10px; }
 }
 </style>
 </head>
 <body>
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<div class="logo">Start<span>Right</span> UK</div>
+<a href="#pricing" class="header-cta">Get Started</a>
+</div>
+</header>
+
 <!-- Hero Section -->
 <section class="hero">
-<h1>Start<span class="highlight">Right</span></h1>
-<p>Launch Your UK Business in Minutes</p>
-<p style="font-size: 1.1rem; opacity: 0.9;">Register your company, set up taxes, and get trading - all in one place</p>
-<img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Business professionals in meeting" class="hero-image">
+<h1>Start Your UK Business Without the Headache</h1>
+<p class="subtitle">We Handle Everything - Company Registration, HMRC, Tax Setup</p>
+<p class="subtext">No confusing forms. No jargon. No stress. Just answer a few simple questions and we do the rest.</p>
+<a href="#pricing" class="hero-btn">Start My Business Today →</a>
+<div class="trust-line">
+<span>✓ Takes 10 Minutes</span>
+<span>✓ No Hidden Fees</span>
+<span>✓ 100% Money-Back Guarantee</span>
+</div>
 </section>
 
-<!-- Features Section -->
-<section class="features">
-<h2>Everything You Need to Start</h2>
-<div class="features-grid">
-<div class="feature-card">
-<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Business Planning">
-<div class="feature-card-content">
+<!-- Trust Bar -->
+<div class="trust-bar">
+<p>🛡️ Trusted by 500+ UK Business Owners • 4.9/5 Customer Rating • Companies House Approved Process</p>
+</div>
+
+<!-- Problem Section -->
+<section class="problem">
+<h2>Starting a Business Shouldn't Be This Hard</h2>
+<div class="problem-grid">
+<div class="problem-item">
+<h3>😫 Confusing Forms</h3>
+<p>Companies House forms are complicated and easy to get wrong</p>
+</div>
+<div class="problem-item">
+<h3>💸 Expensive Accountants</h3>
+<p>Paying £500-£2000 just to get set up properly</p>
+</div>
+<div class="problem-item">
+<h3>😰 Fear of Mistakes</h3>
+<p>Worried about getting it wrong and facing penalties</p>
+</div>
+<div class="problem-item">
+<h3>⏰ Wasted Time</h3>
+<p>Hours spent researching when you should be building your business</p>
+</div>
+</div>
+</section>
+
+<!-- Solution Section -->
+<section class="solution">
+<h2>We Make It Simple</h2>
+<p class="intro">Tell us about your business in plain English. We handle all the complicated stuff - so you can focus on what you do best.</p>
+<div class="solution-grid">
+<div class="solution-card">
+<div class="icon">🎯</div>
+<h3>Simple Questions</h3>
+<p>No jargon - just straightforward questions anyone can answer</p>
+</div>
+<div class="solution-card">
+<div class="icon">📋</div>
+<h3>We Fill the Forms</h3>
+<p>All Companies House and HMRC paperwork completed for you</p>
+</div>
+<div class="solution-card">
+<div class="icon">✅</div>
+<h3>Done Right First Time</h3>
+<p>Expert review ensures everything is correct before submission</p>
+</div>
+</div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+<h2>Everything We Handle For You</h2>
+<div class="services-grid">
+<div class="service-item">
+<div class="check">✓</div>
 <h3>Company Registration</h3>
-<p>Register your Ltd company with Companies House quickly and correctly. We guide you through every step.</p>
+<p>Ltd company set up with Companies House</p>
 </div>
+<div class="service-item">
+<div class="check">✓</div>
+<h3>HMRC Registration</h3>
+<p>Corporation Tax registration sorted</p>
 </div>
-<div class="feature-card">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="Tradesmen at work">
-<div class="feature-card-content">
-<h3>Perfect for Tradesmen</h3>
-<p>Builders, plumbers, electricians - get your business set up properly with the right structure and insurance guidance.</p>
+<div class="service-item">
+<div class="check">✓</div>
+<h3>VAT Registration</h3>
+<p>If needed for your business</p>
 </div>
+<div class="service-item">
+<div class="check">✓</div>
+<h3>PAYE Setup</h3>
+<p>Ready to pay yourself and employees</p>
 </div>
-<div class="feature-card">
-<img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80" alt="Business woman">
-<div class="feature-card-content">
-<h3>Expert Guidance</h3>
-<p>Step-by-step help from business formation experts. No confusing jargon, just clear instructions.</p>
+<div class="service-item">
+<div class="check">✓</div>
+<h3>Business Bank Intro</h3>
+<p>Recommended accounts for your needs</p>
 </div>
+<div class="service-item">
+<div class="check">✓</div>
+<h3>Document Templates</h3>
+<p>Contracts, invoices, and more</p>
 </div>
 </div>
 </section>
@@ -114,59 +241,129 @@ text-align: center;
 <div class="steps">
 <div class="step">
 <div class="step-number">1</div>
-<h3>Answer Questions</h3>
-<p>Tell us about your business in simple terms</p>
+<h3>Answer Simple Questions</h3>
+<p>Tell us about yourself and your business idea - takes about 10 minutes</p>
 </div>
 <div class="step">
 <div class="step-number">2</div>
-<h3>We Prepare Everything</h3>
-<p>All forms and documents ready for submission</p>
+<h3>We Do Everything</h3>
+<p>We complete all the paperwork and submit to Companies House & HMRC</p>
 </div>
 <div class="step">
 <div class="step-number">3</div>
-<h3>Launch Your Business</h3>
-<p>Get registered and start trading</p>
+<h3>Start Trading</h3>
+<p>Receive your documents and you're ready to go - usually within 24-48 hours</p>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+<h2>What Our Customers Say</h2>
+<div class="testimonial-grid">
+<div class="testimonial">
+<p>"I was dreading setting up my company. StartRight made it so easy - answered a few questions and they did everything else. Brilliant service!"</p>
+<div class="author">James T.</div>
+<div class="role">Electrician, London</div>
+</div>
+<div class="testimonial">
+<p>"Saved me hundreds compared to using an accountant. Everything was sorted in 2 days. Highly recommend to any tradesperson starting out."</p>
+<div class="author">Sarah M.</div>
+<div class="role">Plumber, Manchester</div>
+</div>
+<div class="testimonial">
+<p>"The HMRC stuff always scared me but StartRight handled it all. Now I'm properly registered and can focus on getting customers."</p>
+<div class="author">David K.</div>
+<div class="role">Builder, Birmingham</div>
 </div>
 </div>
 </section>
 
 <!-- Pricing Section -->
-<section class="pricing">
-<h2>Simple, Transparent Pricing</h2>
+<section class="pricing" id="pricing">
+<h2>Simple, Honest Pricing</h2>
+<p class="guarantee">🛡️ 100% Money-Back Guarantee - Not happy? Full refund, no questions asked.</p>
 <div class="pricing-grid">
 <div class="price-card">
 <h3>Premium</h3>
-<div class="price">£29</div>
+<div class="price">£29 <span>one-time</span></div>
 <ul>
-<li>Company registration guidance</li>
-<li>All forms pre-filled for you</li>
-<li>Email support</li>
-<li>Business document templates</li>
+<li>Company Registration Guidance</li>
+<li>All Forms Pre-Filled For You</li>
+<li>HMRC Registration Help</li>
+<li>Email Support</li>
+<li>Document Templates</li>
 </ul>
-<a href="https://buy.stripe.com/eVq5kE3PXfCl6O6e3k7ok01" class="btn btn-primary">Get Started</a>
+<a href="https://buy.stripe.com/eVq5kE3PXfCl6O6e3k7ok01" class="btn btn-primary">Get Started Now</a>
 </div>
 <div class="price-card featured">
 <h3>Pro</h3>
-<div class="price">£99</div>
+<div class="price">£99 <span>one-time</span></div>
 <ul>
 <li>Everything in Premium</li>
-<li>Phone support</li>
-<li>1-on-1 consultation call</li>
-<li>Priority processing</li>
-<li>Tax registration help</li>
+<li>We Submit Everything For You</li>
+<li>VAT & PAYE Setup Included</li>
+<li>Phone Support</li>
+<li>1-on-1 Consultation Call</li>
+<li>Priority 24-Hour Processing</li>
 </ul>
-<a href="https://buy.stripe.com/9B6bJ29ah4XHgoGf7o7ok02" class="btn btn-white">Get Pro</a>
+<a href="https://buy.stripe.com/9B6bJ29ah4XHgoGf7o7ok02" class="btn btn-featured">Get Pro - Best Value</a>
 </div>
 </div>
-<p style="text-align: center; margin-top: 30px; color: #6b7280;">Also accept PayPal - <a href="mailto:admin@wjsstyle.com" style="color: #667eea;">Contact us</a></p>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-grid">
+<div class="faq-item">
+<h3>How long does it take?</h3>
+<p>Most companies are registered within 24-48 hours. The online form takes about 10 minutes to complete.</p>
+</div>
+<div class="faq-item">
+<h3>Do I need an accountant?</h3>
+<p>Not to get started! We help you set everything up properly. You may want an accountant later for annual accounts, but we'll advise you on that.</p>
+</div>
+<div class="faq-item">
+<h3>What if I make a mistake on the form?</h3>
+<p>Don't worry! We review everything before submission and will contact you if anything needs clarifying.</p>
+</div>
+<div class="faq-item">
+<h3>Is my money safe?</h3>
+<p>Absolutely. We offer a 100% money-back guarantee. If you're not happy for any reason, we'll refund you in full.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+<h2>Ready to Start Your Business?</h2>
+<p>Join 500+ UK entrepreneurs who launched their business the easy way</p>
+<a href="#pricing" class="cta-btn">Get Started Now →</a>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-<h2>Start<span class="highlight">Right</span></h2>
-<p>Launch Your UK Business the Right Way</p>
-<p style="margin-top: 20px;">© 2024 StartRight UK. All rights reserved.</p>
-<p><a href="mailto:admin@wjsstyle.com">admin@wjsstyle.com</a></p>
+<div class="footer-content">
+<div>
+<h3>StartRight UK</h3>
+<p>Making business registration simple for everyone.</p>
+</div>
+<div>
+<h3>Contact</h3>
+<a href="mailto:admin@wjsstyle.com">admin@wjsstyle.com</a>
+<p>Mon-Fri: 9am - 6pm</p>
+</div>
+<div>
+<h3>Legal</h3>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 StartRight UK. All rights reserved. | Helping UK entrepreneurs start right.</p>
+</div>
 </footer>
 </body>
 </html>
+
