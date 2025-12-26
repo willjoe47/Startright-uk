@@ -1,0 +1,14 @@
+{
+  "name": "startright-uk",
+  "version": "1.0.0",
+  "description": "StartRight UK - Company Formation Services",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "docx": "^8.5.0",
+    "resend": "^4.0.0"
+  }
+}
