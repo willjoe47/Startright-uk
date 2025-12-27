@@ -21,9 +21,11 @@ module.exports = async function handler(req, res) {
       ]
     });
 
-    res.status(200).json({ 
-      reply: response.content[0].text 
-    });
+    const reply = response.content && response.content[0] && response.content[0].text 
+      ? response.content[0].text 
+      : 'Sorry, I could not generate a response.';
+
+    res.status(200).json({ reply });
 
   } catch (error) {
     console.error('Error:', error);
